@@ -1,9 +1,8 @@
 import { MainLayout } from "@/layouts/MainLayout";
 import Link from "next/link";
-
+import { posts } from "@/data/posts";
 export async function getStaticProps() {
-  const postsRespose = await fetch("http://localhost:3000/api/posts");
-  const posts = await postsRespose.json();
+ 
 
   return {
     props: {
@@ -12,7 +11,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function posts({posts}) {
+export default function postsRender({posts}) {
   
   return (
     <>
